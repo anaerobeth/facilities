@@ -1,0 +1,16 @@
+<h3>Listing locations</h3>
+
+<% @locations.each do |location| %>
+  <ul>
+    <li><%= location.category %><li>
+    <li><%= location.label %></li>
+    <li><%= location.landlord_id %></li>
+    <li><%= location.longitude %></li>
+    <li><%= location.latitude %></li>
+    <li><%= location.address %></li>
+    <li><%= location.floor %></li>
+    <li><%= location.otherid1 %></li>
+    <li><%= location.otherid1 %></li>
+    <li><%= location.comments %></li>
+  </ul>
+  <% end %>

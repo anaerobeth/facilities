@@ -1,0 +1,21 @@
+<% @landlord.errors.full_messages.each do | error | %>
+  <%= content_tag :p, error %>
+<% end %>
+
+<h3>Add a Landlord</h3>
+
+<%= form_for(@landlord) do |f| %>
+
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name, placeholder: 'First Name' %>
+
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name, placeholder: 'Last Name' %>
+
+  <%= f.label :company_name %>
+  <%= f.text_field :company_name, placeholder: 'Company Name' %>
+
+  <%= f.submit 'Create Landlord' %>
+<% end %>
+
+<%= link_to 'Cancel', landlords_path %>

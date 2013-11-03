@@ -1,0 +1,8 @@
+<h1>List of landlords</h1>
+<% @landlords.each do |landlord| %>
+  <ul>
+    <li><%= landlord.first_name %></li>
+    <li><%= landlord.last_name %></li>
+    <li><%= landlord.company_name %></li>
+  </ul>
+<% end %>

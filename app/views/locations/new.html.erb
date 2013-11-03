@@ -1,0 +1,52 @@
+<% @location.errors.full_messages.each do |error| %>
+  <%= content_tag :p, error %>
+<% end %>
+
+<h3>Add a location</h3>
+
+<%= form_for(@location) do |f| %>
+  <div>
+    <%= f.label :category %><br />
+    <%= f.select :category, options_for_select(["Manhole", "Hut", "Building", "Rack"]) %>
+  </div>
+
+  <div>
+    <%= f.label :label %><br />
+    <%= f.text_field :label %>
+  </div>
+  <div>
+    <%= f.label :landlord_id %><br />
+    <%= f.text_field :landlord_id %>
+  </div>
+  <div>
+    <%= f.label :latitude %><br />
+    <%= f.text_field :latitude %>
+  </div>
+  <div>
+    <%= f.label :longitude %><br />
+    <%= f.text_field :longitude %>
+  </div>
+  <div>
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </div>
+  <div>
+    <%= f.label :floor %><br />
+    <%= f.text_field :floor %>
+  </div>
+  <div>
+    <%= f.label :otherid1 %><br />
+    <%= f.text_field :otherid1 %>
+  </div>
+  <div>
+    <%= f.label :otherid2 %><br />
+    <%= f.text_field :otherid2 %>
+  </div>
+  <div>
+    <%= f.label :comments %><br />
+    <%= f.text_field :comments %>
+  </div>
+  <div>
+    <%= f.submit "Add Location" %>
+   </div>
+<% end %>
