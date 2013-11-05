@@ -1,4 +1,6 @@
 Facilities::Application.routes.draw do
+  resources :enclosures
+
   resources :locations
 
   resources :landlords
