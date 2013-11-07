@@ -11,10 +11,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131101022339) do
+ActiveRecord::Schema.define(version: 20131107030217) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "enclosures", force: true do |t|
+    t.string   "category",    null: false
+    t.string   "label"
+    t.string   "comment"
+    t.integer  "location_id", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "facilities", force: true do |t|
+    t.string   "category",   null: false
+    t.decimal  "capacity"
+    t.string   "unit"
+    t.string   "label",      null: false
+    t.string   "comment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "facility_enclosures", force: true do |t|
+    t.integer  "facility_id",  null: false
+    t.integer  "enclosure_id", null: false
+    t.string   "position",     null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "facility_locations", force: true do |t|
+    t.integer  "facility_id", null: false
+    t.integer  "location_id", null: false
+    t.string   "position",    null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "landlords", force: true do |t|
     t.string   "first_name"
