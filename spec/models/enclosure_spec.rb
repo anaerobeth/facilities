@@ -1,5 +1,6 @@
 require 'spec_helper'
 
 describe Enclosure do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should_validate_presence_of(:category) }
+  it { should_validate_presence_of(:location) }
 end
